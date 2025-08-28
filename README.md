@@ -1,3 +1,8 @@
+<h1>Cinelista - NextJs + Typescript || Styled Components</h1>
+<p>Exercício de fixação e início do módulo NextJs. Conceitos iniciais de estrutura de pastas e rotas.</p>
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
