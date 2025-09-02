@@ -1,9 +1,11 @@
 import Title from "./components/Title";
 import Grid from "./components/Grid";
 import {filmes} from "@/lib/filmes"
-import styles from "./page.module.css";
+import { getPopularMovies } from "@/lib/api/tmdb";
 
-export default function Home() {
+
+export default async function Home() {
+  const filmes = await getPopularMovies();
   return (
     <div>
       <Title title={"Filmes em Destaque"}/>
