@@ -1,4 +1,4 @@
-<h1>Cinelista - NextJs + Typescript || Styled Components</h1>
+<h1>Cinelista - NextJs + Typescript || Css Modules</h1>
 <p>Exercício de fixação do módulo NextJS. Rotas Dinâmicas, Fetching avançado consumindo API do TMDB com variáveis de ambiente.</p>
 
 
