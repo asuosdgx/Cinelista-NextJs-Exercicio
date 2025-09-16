@@ -3,10 +3,11 @@ on:
   push:
     branches:
         - main
-  workflow_dispatch: 
+  workflow_dispatch: #Habilitar o botão "Run Workflow" no Github Actions
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout do código
       - uses: actions/checkout@v4
@@ -15,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
       - name: Instalação das dependências
       - run: npm install 
 
