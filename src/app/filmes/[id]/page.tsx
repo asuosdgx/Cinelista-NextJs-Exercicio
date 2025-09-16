@@ -8,8 +8,8 @@ import { getMovieDetails } from "@/lib/api/tmdb";
 
 
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-    const { id } = params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const details = await getMovieDetails(Number(id));
     if (!details) {
         return;
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     };
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-    const { id } = params;
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const details = await getMovieDetails(Number(id));
     return (
         <section className={style.detalhes}>
