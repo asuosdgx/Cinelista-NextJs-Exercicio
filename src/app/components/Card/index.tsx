@@ -1,7 +1,9 @@
 
+
 import { Filme } from "@/types/types";
 import styles from "./Card.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
     filme : Filme
@@ -14,10 +16,12 @@ export default function Card({filme}: Props){
         return (
             <Link href={`/filmes/${id}`} className={styles.card__link}>
                 <div key={id} className={styles.card}>
-                    <img
+                    <Image
                         className={styles.card__poster}
                         src={imgUrl}
                         alt={`Poster do filme ${title}`}
+                        width={300}
+                        height={450}
                     />
                     <div>
                         <h3 className={styles.card__title}>{title}</h3>
