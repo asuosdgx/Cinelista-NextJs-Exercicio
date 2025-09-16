@@ -4,24 +4,26 @@ on:
     branches:
         - main
   workflow_dispatch: #Habilitar o botão "Run Workflow" no Github Actions
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout do código
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Instalação do Node
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
       
       - name: Instalação das dependências
-      - run: npm install 
+        run: npm install 
 
       - name: Rodar o build
-      - run: npm run build
+        run: npm run build
         env:
             TMDB_API_URL: ${{ vars.TMDB_API_URL }}
             TMDB_API_KEY: ${{secrets.TMDB_API_KEY}}
