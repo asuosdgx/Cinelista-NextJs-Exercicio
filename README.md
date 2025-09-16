@@ -1,5 +1,5 @@
-<h1>Cinelista - NextJs + Typescript || Styled Components</h1>
-<p>Exercício de fixação e início do módulo NextJs. Conceitos iniciais de estrutura de pastas e rotas.</p>
+<h1>Cinelista - NextJs + Typescript || Css Modules</h1>
+<p>Exercício de fixação do módulo NextJS. Rotas Dinâmicas, Fetching avançado consumindo API do TMDB com variáveis de ambiente.</p>
 
 
 
