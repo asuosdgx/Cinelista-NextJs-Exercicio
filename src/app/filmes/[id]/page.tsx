@@ -6,16 +6,11 @@ import { getMovieDetails } from "@/lib/api/tmdb";
 
 
 
-interface PageParams {
-    params: {
-        id: string;
-    };
-}
 
-export async function generateMetadata({ params }: PageParams) {
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
     const { id } = params;
     const details = await getMovieDetails(Number(id));
-
     if (!details) {
         return;
     }
@@ -25,10 +20,9 @@ export async function generateMetadata({ params }: PageParams) {
     };
 }
 
-export default async function Page({ params }: PageParams) {
+export default async function Page({ params }: { params: { id: string } }) {
     const { id } = params;
     const details = await getMovieDetails(Number(id));
-
     return (
         <section className={style.detalhes}>
             <Link href='/'>Voltar</Link>
@@ -51,5 +45,4 @@ export default async function Page({ params }: PageParams) {
             )}
         </section>
     );
-
 }
