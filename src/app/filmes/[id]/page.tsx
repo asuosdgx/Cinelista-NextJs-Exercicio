@@ -5,13 +5,14 @@ import Image from "next/image";
 import { getMovieDetails } from "@/lib/api/tmdb";
 
 
-type Props = {
+
+interface PageParams {
     params: {
         id: string;
     };
-};
+}
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: PageParams) {
     const { id } = params;
     const details = await getMovieDetails(Number(id));
 
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
     };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: PageParams) {
     const { id } = params;
     const details = await getMovieDetails(Number(id));
 
